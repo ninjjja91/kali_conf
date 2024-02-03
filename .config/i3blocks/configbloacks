@@ -1,0 +1,70 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=40
+
+
+[user]
+#label=ï€‡ # Install fontawesome for use this
+label=   
+command=lslogins | grep $USER | awk '{print $5}'
+interval=once
+
+[hostpc]
+#label=ï€‡ # Install fontawesome for use this
+label=  
+command=uname -n
+interval=once
+
+[disk_nas]
+label=   
+instance=/
+interval=30  
+command=~/.config/i3blocks/disk_usage/disk_usage format=" Free {avail:.1f}G  Used {used:.1f}G  Total {total:.1f}G"
+output_color=#00d8ff
+
+[cpu_usage]
+command=~/.config/i3blocks/cpu_usage/cpu_usage
+interval=10
+LABEL=   
+#min_width=CPU: 100.00%
+#T_WARN=50
+#T_CRIT=80
+#DECIMALS=2
+COLOR_NORMAL=#00d8ff
+COLOR_WARN=#00d8ff
+COLOR_CRIT=#00d8ff
+
+
+[mem]
+label=    
+command=free -h --si | awk '/^Mem:/ {print $3 "/" $2}'
+interval=30
+
+[wlani]
+label=    
+command=ip route | head -1 | cut -d " " -f5
+interval=once
+
+[iface]
+command=~/.config/i3blocks/iface/iface
+LABEL=  
+#IFACE=wlan0
+#ADDRESS_FAMILY=inet6?
+color=#00d8ff
+interval=10
+# set this to 1 to display the name of the connected WIFI interface instead of the IP address.
+display_wifi_name=0                                                                                   
+
+
+[time]
+command=date '+%y-%m-%d %H:%M:%S' 
+label=    
+interval=1
