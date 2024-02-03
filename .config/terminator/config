@@ -1,0 +1,29 @@
+[global_config]
+  borderless = True
+  tab_position = hidden
+  scroll_tabbar = True
+  homogeneous_tabbar = False
+[keybindings]
+  new_terminator = <Shift><Alt><Super>i
+[profiles]
+  [[default]]
+    background_darkness = 0.57
+    background_type = transparent
+    background_image = /home/m4z3/.wallpapers/36.jpg
+    font = Anonymice Nerd Font Bold 18
+    foreground_color = "#7000ff"
+    show_titlebar = False
+    scrollback_infinite = True
+    palette = "#000000:#f6d32d:#10ff00:#a51d2d:#e5a50a:#cd00cd:#00d1ff:#e5e5e5:#7f7f7f:#6d2f9e:#c01c28:#26a269:#5c5cff:#ff00ff:#00d1ff:#cd0000"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
