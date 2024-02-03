@@ -27,22 +27,16 @@ bindsym $mod+Return exec terminator
 
 #firefox
 bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec waterfox-classic
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start program launcher
-#bindsym $mod+d exec --no-startup-id dmenu_run -fn '-13' -nb '#181818' -nf '#00d8ff' -sb '#00d8ff' -sf '#181818'
 
 bindsym $mod+d exec --no-startup-id rofi -show run
-#pdf
-bindsym $mod+k exec --no-startup-id evince
 
-#pamac
-bindsym $mod+p exec --no-startup-id pamac-manager
 #thunar
-bindsym $mod+m exec --no-startup-id caja
+bindsym $mod+m exec --no-startup-id thunar
 #ranger
 bindsym $mod+l exec --no-startup-id terminator -e ranger
 #pavu
@@ -51,7 +45,6 @@ bindsym $mod+x exec --no-startup-id pavucontrol
 bindsym $mod+c exec --no-startup-id vscodium
 #virtualbox
 bindsym $mod+t exec --no-startup-id virtualbox
-bindsym $mod+Shift+t exec --no-startup-id virt-manager
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
@@ -213,29 +206,15 @@ bindsym $mod+r mode "resize"
 # Lock screen
 
 # Autostart applications
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id feh --bg-fill ~/.wallpapers/wallhaven-4xx8yo.jpg ~/.wallpapers/wallhaven-dgjqm3.jpg
-#exec_always --no-startup-id /home/m4z3/Downloads/./Kraken_Z_Playground.v1.1.1.Linux_x86_64.AppImage
+
 
 exec_always --no-startup-id picom -b
-exec_always --no-startup-id pulseaudio -D
-exec_always --no-startup-id xbindkeys
-exec_always --no-startup-id nm-applet
-exec --no-startup-id pamac-tray
-exec --no-startup-id pa-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id nvidia-xconfig
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xrandr --output DP-2 --auto --pos 1350x0 -r 60  --primary --output DP-0 --auto --scale 1.25 --pos 0x0 --rotate right -r 165
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id liquidctl --match kraken set fan speed  20 40  30 60 35 70 40 100 50 100 53 100 55 100
-exec_always --no-startup-id liquidctl --match kraken set pump speed  20 40  30 50  35 65  40 70  50 100 55 100 
-exec_always --no-startup-id liquidctl --match kraken set lcd screen orientation 270
-exec_always --no-startup-id liquidctl --match kraken set lcd screen gif /home/m4z3/.wallpapers/giphy3.gif
 
-exec_always --no-startup-id liquidctl --match kraken initialize
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -271,11 +250,10 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	output DP-2
 	i3bar_command i3bar
 	status_command i3blocks
 	position top
-	height 55
+	height 40
 	tray_output primary
 	font pango:Anonymice Nerd Font Complete Mono 18 
 	strip_workspace_numbers yes
@@ -297,33 +275,6 @@ bar {
 	}
 }
 
-bar {
-	output DP-0
-	i3bar_command i3bar
-	status_command i3blocks -c /home/m4z3/.config/i3blocks/configm2.conf
-	position top
-	height 55
-	tray_output none
-	font pango:Anonymice Nerd Font Complete Mono 14
-	strip_workspace_numbers yes
-	strip_workspace_name no
-	bindsym button4 nop
-	bindsym button5 nop
-
-    colors {
-        background #090909
-        statusline #00d8ff
-        separator  #00d8ff
-
-#                     border  backgr. text
-	    focused_workspace  #00d8ff #090909 #00d8ff
-        active_workspace   #00d8ff #090909 #00d8ff
-        inactive_workspace #090909 #090909 #00d8ff
-        binding_mode       #00d8ff #00d8ff #0000b3
-        urgent_workspace   #00d8ff #00d8ff #0000b3
-    }
-
-}
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
@@ -350,10 +301,6 @@ bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
 bindsym XF86AudioMute exec amixer sset Master toggle
 
-# Setting workspace to monitors
-workspace $ws1 output DP-2
-workspace $ws2 output DP-0
-
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -370,4 +317,3 @@ mode "$mode_system" {
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
     bindsym Escape mode "default"
-
