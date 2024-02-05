@@ -4,7 +4,7 @@ font: "mono 16";
 with: 400;
 lines: 50;
 location: 0;
-yoffset: 890;
+yoffset: 400;
 xoffset: 0;
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
