@@ -110,10 +110,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 GITSTATUS_LOG_LEVEL=DEBUG
-alias cura='/home/m4z3/Downloads/./Ultimaker-Cura-5.1.0-linux.AppImage & disown && exit '
-alias fcad='/home/m4z3/Downloads/./FreeCAD_0.2.AppImage & disown && exit '
-alias dpm='xrandr --output DP-2 --auto  --primary --output DP-0 --auto --rotate normal --left-of DP-2'
-alias dpr='xrandr --output DP-2 --auto  --primary --output DP-0 --auto --rotate right --left-of DP-2'
 alias ll='ls -lah'
 alias grub-update='grub-mkconfig -o /boot/grub/grub.cfg'
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx &> /dev/null
@@ -122,7 +118,6 @@ alias grub-update='grub-mkconfig -o /boot/grub/grub.cfg'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
-#export PATH="~/Library/Android/sdk/tools:$PATH"
-#export PATH="~/Library/Android/sdk/platform-tools:$PATH"
+
 
 
