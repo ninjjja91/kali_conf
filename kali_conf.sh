@@ -7,4 +7,6 @@ cp -r .fehbg ~/.fehbg
 cp -r .fonts ~/.fonts
 cp -r .wallpapers ~/.wallpapers
 cp -r .xinitrc ~/.xinitrc
+cp -r .zshrc ~/.zshrc 
 sudo systemctl disable lightdm.service
+sudo cp etc/40-libinput.conf /etc/X11/xorg.conf.d/0-libinput.conf
