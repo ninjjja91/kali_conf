@@ -11,3 +11,4 @@ cp -r .xinitrc ~/.xinitrc
 cp -r .zshrc ~/.zshrc 
 sudo systemctl disable lightdm.service
 sudo cp etc/40-libinput.conf /etc/X11/xorg.conf.d/0-libinput.conf
+sudo cp -R etc/grub /etc/default/grub
