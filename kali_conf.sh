@@ -1,7 +1,8 @@
 sudo apt update
 sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable --recheck
 sudo apt install kali-desktop-i3 terminator i3blocks feh grub-customizer ranger awesome-extra dunst 
-sudo apt purge xdg-desktop-portal
+sudo apt purge xdg-desktop-portal 
+sudo apt purge plymouth
 cp -r .config/* ~/.config/
 cp -r .fehbg ~/.fehbg
 cp -r .fonts ~/.fonts
